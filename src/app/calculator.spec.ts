@@ -34,7 +34,7 @@ describe('Test for Calculator', () => {
     expect(name).toBeDefined();
     expect(name2).toBeUndefined();
 
-    expect(1 + 3 === 3).toBeTruthy(); // 4
+    expect(1 + 3 === 4).toBeTruthy(); // 4
     expect(1 + 1 === 3).toBeFalsy(); // 2
 
     expect(5).toBeLessThan(10);
