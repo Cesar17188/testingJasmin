@@ -2,7 +2,7 @@
 import { firstValueFrom } from 'rxjs';
 import { ValueService } from './value.service';
 
-fdescribe('ValueService', () => {
+describe('ValueService', () => {
   let service: ValueService;
 
   beforeEach(() => {
