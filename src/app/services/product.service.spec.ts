@@ -159,11 +159,7 @@ fdescribe('ProductsService', () => {
         const mockData = generateOneProduct();
         const id = '1';
         const dto: UpdateProductDTO = {
-          title: 'update Product',
-          price: 200,
-          images: ['img'],
-          description: 'bla bla bla bla',
-          categoryId: 12,
+          title: 'update Product'
         };
         // Act
         productsService.update(id, {...dto}).subscribe((data) => {
