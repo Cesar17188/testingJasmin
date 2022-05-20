@@ -7,7 +7,7 @@ export class MapsService {
 
   center = {lat: 0, lng: 0};
 
-  constructor() { }
+  constructor() {  }
 
   getCurrentPosition() {
     navigator.geolocation.getCurrentPosition((response) => {
