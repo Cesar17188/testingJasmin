@@ -1,7 +1,7 @@
 <section class="container">
   <h3>Selected Person</h3>
-  <div>
-    <ul *ngIf="selectedPerson">
+  <div *ngIf="selectedPerson" class="selectedPerson">
+    <ul>
       <li>Name: {{selectedPerson.name}}</li>
       <li>Age: {{selectedPerson.age}}</li>
     </ul>
