@@ -4,7 +4,7 @@ import { PersonComponent } from '../person/person.component';
 import { By } from '@angular/platform-browser';
 import { PeopleComponent } from './people.component';
 
-fdescribe('PeopleComponent', () => {
+describe('PeopleComponent', () => {
   let component: PeopleComponent;
   let fixture: ComponentFixture<PeopleComponent>;
 
