@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of  } from 'rxjs';
+import { By } from '@angular/platform-browser';
 
 import { ProductsComponent } from './products.component';
 import { ProductComponent } from './../product/product.component';
@@ -34,10 +35,26 @@ fdescribe('ProductsComponent', () => {
   });
 
   it('should create', () => {
-    const productsMock = generateManyProducts(3);
-    productService.getAll.and.returnValue(of(productsMock));
-    fixture.detectChanges();
     expect(component).toBeTruthy();
     expect(productService.getAll).toHaveBeenCalled();
+  });
+
+  describe('test for getAllProducts()', () => {
+    it('should return product list from service', () => {
+      // Arrange
+      const productsMock = generateManyProducts(10);
+      productService.getAll.and.returnValue(of(productsMock));
+      const countPrev = component.products.length;
+      // Act
+      component.getAllProducts();
+      // TODO
+      const expectedImg = fixture.debugElement.query(By.css('app-product img'));
+
+
+      fixture.detectChanges();
+      // Assert
+      expect(component.products.length).toEqual(productsMock.length + countPrev);
+      expect(component.products[0].images[0]).toEqual(expectedImg.nativeElement.src);
+    });
   });
 });
