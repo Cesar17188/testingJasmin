@@ -3,4 +3,8 @@
   <h5 highligth>Hay un valor default</h5>
   <h5 highligth="yellow">Hay un valor</h5>
   <input [(ngModel)]="color" type="text" [highligth]="color">
+  <h3>Pipe</h3>
+  <p>{{ 'My texto' | reverse }}</p>
+  <input [(ngModel)]="text">
+  <p>{{text | reverse}}</p>
 </section>
