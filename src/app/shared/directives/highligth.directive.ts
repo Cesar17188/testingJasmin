@@ -1,12 +1,12 @@
 import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
 
 @Directive({
-  selector: '[highligth]'
+  selector: '[appHighligth]'
 })
 export class HighligthDirective implements OnChanges{
 
   defaultColor = 'gray';
-  @Input('highligth') bgColor = '';
+  @Input('appHighligth') bgColor = '';
 
   constructor(
     private element: ElementRef
