@@ -4,9 +4,9 @@ import { By } from '@angular/platform-browser';
 
 import { ProductsComponent } from './products.component';
 import { ProductComponent } from './../product/product.component';
-import { ProductsService } from './../../services/product.service';
-import { ValueService } from './../../services/value.service';
-import { generateManyProducts } from './../../models/product.mock';
+import { ProductsService } from './../../../services/product.service';
+import { ValueService } from './../../../services/value.service';
+import { generateManyProducts } from './../../../models/product.mock';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;

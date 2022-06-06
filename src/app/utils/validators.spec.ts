@@ -1,7 +1,7 @@
 import { FormControl, FormGroup } from '@angular/forms';
 import { MyValidators } from './validators';
 import { UsersService } from './../services/users.service';
-import { mockObservable } from 'src/testinge';
+import { mockObservable } from 'src/testing';
 
 describe('Tests for MyValidators',() => {
 

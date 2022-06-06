@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { MyValidators } from './../../../utils/validators';
 
@@ -28,7 +29,8 @@ export class RegisterFormComponent {
 
   constructor(
     private fb: FormBuilder,
-    private usersService: UsersService
+    private usersService: UsersService,
+    private router: Router,
   ) {}
 
   register(event: Event) {
@@ -42,6 +44,7 @@ export class RegisterFormComponent {
           // redirect
           // alert
           this.status = 'success';
+          this.router.navigateByUrl('/login');
         },
         error: (error) => {
           // redict
