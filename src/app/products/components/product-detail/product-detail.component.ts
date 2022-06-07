@@ -16,6 +16,7 @@ export class ProductDetailComponent implements OnInit {
 
   product: Product | null = null;
   status: 'loading' | 'success' | 'error' | 'init' = 'init';
+  typeCustomer: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -33,6 +34,10 @@ export class ProductDetailComponent implements OnInit {
           this.goToBack();
         }
       });
+
+      this.route.queryParamMap.subscribe(params => {
+        this.typeCustomer = params.get('type');
+      })
   }
 
   private getProductDetail(productId: string) {
