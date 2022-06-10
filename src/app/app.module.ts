@@ -14,6 +14,8 @@ import { PeopleComponent } from './components/people/people.component';
 import { OthersComponent } from './components/others/others.component';
 
 import { SharedModule } from './shared/shared.module';
+import { BannerComponent } from './components/banner/banner.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { SharedModule } from './shared/shared.module';
     PicoPreviewComponent,
     PersonComponent,
     PeopleComponent,
-    OthersComponent
+    OthersComponent,
+    BannerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
