@@ -7,7 +7,7 @@ import { AuthGuard } from './auth.guard';
 import { fakeActivatedRouteSnapshot, fakeRouterStateSnapshot, fakeParamMap ,mockObservable } from './../../testing';
 import { generateOneUser } from '../models/user.mock';
 
-fdescribe('Test for AuthGuard', () => {
+describe('Test for AuthGuard', () => {
   let guard: AuthGuard;
   let tokenService: jasmine.SpyObj<TokenService>;
   let authService: jasmine.SpyObj<AuthService>;
