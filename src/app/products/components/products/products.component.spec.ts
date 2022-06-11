@@ -8,6 +8,8 @@ import { ProductsService } from './../../../services/product.service';
 import { ValueService } from './../../../services/value.service';
 import { generateManyProducts } from './../../../models/product.mock';
 
+import { RouterLinkDirectiveStub } from './../../../../testing';
+
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
   let fixture: ComponentFixture<ProductsComponent>;
@@ -19,7 +21,7 @@ describe('ProductsComponent', () => {
     const valueServiceSpy = jasmine.createSpyObj('ValueService', ['getPromiseValue']);
 
     await TestBed.configureTestingModule({
-      declarations: [ ProductsComponent, ProductComponent ],
+      declarations: [ ProductsComponent, ProductComponent, RouterLinkDirectiveStub ],
       providers: [
         { provide: ProductsService, useValue: productServiceSpy },
         { provide: ValueService, useValue: valueServiceSpy }
