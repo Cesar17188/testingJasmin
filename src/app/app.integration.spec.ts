@@ -3,7 +3,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLinkWithHref } from '@angular/router';
+import { clickElement, query, queryAllByDirective } from 'src/testing';
 
 @Component({
   selector: 'app-people'
@@ -65,10 +66,27 @@ fdescribe('App Integration test', () => {
     router.initialNavigation();
 
     tick(); // wait for the router to be initialized
-    fixture.detectChanges();
+    fixture.detectChanges(); // ngOnInit()
   }));
 
   it('should create the component', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should there are 7 routerlinks', () => {
+    const links = queryAllByDirective(fixture, RouterLinkWithHref);
+    expect(links.length).toEqual(7);
+  });
+
+  it('should render OthersComponent when clicked', fakeAsync(() => {
+    clickElement(fixture, 'others-link', true);
+
+    tick(); // wait while nav...
+    fixture.detectChanges(); // ngOnInit - OthersComponent
+
+    expect(router.url).toEqual('/others');
+    const element = query(fixture, 'app-others');
+    expect(element).not.toBeNull();
+  }));
+
 });
